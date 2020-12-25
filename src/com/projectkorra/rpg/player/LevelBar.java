@@ -12,7 +12,7 @@ public class LevelBar {
 
 	private RPGPlayer player;
 	private BossBar bar;
-	private boolean toggled = true;
+	private boolean toggled = false;
 	
 	public LevelBar(RPGPlayer player) {
 		this.player = player;

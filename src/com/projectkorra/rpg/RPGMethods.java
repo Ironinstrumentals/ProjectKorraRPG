@@ -117,10 +117,11 @@ public class RPGMethods {
 				eligible.add(player);
 			}
 		}
-
-		Player chosen = eligible.get(new Random().nextInt(eligible.size()));
-		setAvatar(chosen.getUniqueId());
-		Bukkit.broadcastMessage(ChatColor.WHITE + chosen.getName() + ChatColor.DARK_PURPLE + " has been reincarnated as the next avatar!");
+		if (eligible.size() > 0) {
+			Player chosen = eligible.get(new Random().nextInt(eligible.size()));
+			setAvatar(chosen.getUniqueId());
+			Bukkit.broadcastMessage(ChatColor.WHITE + chosen.getName() + ChatColor.DARK_PURPLE + " has been reincarnated as the next avatar!");
+		}
 	}
 
 	/**

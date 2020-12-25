@@ -29,8 +29,6 @@ permissions:
     default: true
   bending.rpg.command.chakra:
     default: true
-  bending.rpg.command.unlocked:
-    default: true
   bending.rpg.command.unlock:
     default: op
   bending.rpg.command.xp:

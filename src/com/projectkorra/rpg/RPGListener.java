@@ -95,12 +95,12 @@ public class RPGListener implements Listener {
 				if (finalState && bPlayer.canBendIgnoreBindsCooldowns(CoreAbility.getAbility("AvatarState"))) {
 					if (!bPlayer.isOnCooldown("AvatarState")) {
 						player.setHealth(2);
-						event.setCancelled(false);
+						event.setCancelled(true);
 						new AvatarState(player);
 						return;
 					}
 				}
-				//  && !event.isCancelled()
+				
 				if (ConfigManager.getConfig().getBoolean("Avatar.AutoCycle.Enabled") && !event.isCancelled()) {
 					RPGMethods.cycleAvatar(player.getUniqueId());
 				}
