@@ -239,15 +239,15 @@ public class RPGPlayer {
 		for (Chakra chakra : Chakra.values()) {
 			DBConnection.sql.modifyQuery("UPDATE rpg_players SET " + chakra.toString().toLowerCase() + " = " + stats.getPoints(chakra) + " WHERE id = " + this.id);
 		}
-		
-		DBConnection.sql.modifyQuery("DELETE FROM rpg_player_abilities WHERE player_id = " + this.id + ";", false);
-		for (String ability : unlocked) {
-			int abilID = RPGMethods.getAbilityID(ability);
-			if (abilID != -1) {
-				DBConnection.sql.modifyQuery("INSERT INTO rpg_player_abilities (player_id, ability_id) VALUES (" + id + ", " + abilID + ");", false);
-			}
-		}
-		
+		/*//--Ability Save & Delete
+		// DBConnection.sql.modifyQuery("DELETE FROM rpg_player_abilities WHERE player_id = " + this.id + ";", false);
+		// for (String ability : unlocked) {
+		// 	int abilID = RPGMethods.getAbilityID(ability);
+		// 	if (abilID != -1) {
+		// 		DBConnection.sql.modifyQuery("INSERT INTO rpg_player_abilities (player_id, ability_id) VALUES (" + id + ", " + abilID + ");", false);
+		// 	}
+		// }
+		//--Ability Save & Delete--//*/
 		if (remove) {
 			PLAYERS.remove(bPlayer.getUUID());
 		}
