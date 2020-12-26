@@ -56,3 +56,6 @@ Temporary Items
 *.mf
 build.xml
 /target/
+
+
+.vscode/
